@@ -4,7 +4,7 @@ import { CartProvider } from "./storefront/CartProvider";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <CartProvider>
         <Storefront />
       </CartProvider>
