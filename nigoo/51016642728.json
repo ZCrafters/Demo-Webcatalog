@@ -1,0 +1,131 @@
+{
+  "name": "NIGOO Mimi Cardigan Rajut Knitwear Wanita",
+  "url": "https://shopee.co.id/product/undefined/undefined",
+  "description": "Tinggi Model 174 cm\nBahan : 100% Viscose Knit\nUkuran : S-M, L-XL\nDetail Size S-M:\nLebar Dada : 100 cm\nPanjang Baju : 55 cm\nPanjang Lengan : 55 cm\nDetail Size L-XL:\nLebar Dada : 120 cm\nPanjang Baju : 60 cm\nPanjang Lengan : 55 cm\nWarna yang terlihat pada gambar mungkin tidak 100% sama dengan produk yang sebenarnya, disebabkan karna proses pencahayaan pada pengambilan gambar atau kualitas layar gadget yang digunakan untuk melihat gambar.\nUntuk pembelian online, mohon pertimbangkan toleransi perbedaan warna dan ukuran produk yang dipesan. Apabila setelah barang diterima terdapat perbedaan yang dianggap terlalu jauh dan tidak dapat diterima, silahkan ajukan penukaran barang melalui Customer Service kami.\nMohon buat video unboxing mulai dari sebelum paket dibuka. Tanpa video unboxing, mohon maaf kami tidak dapat menerima complaint (terutama atas kekurangan jumlah barang).\nHappy shopping",
+  "brand": "Nigoo",
+  "categories": [
+    "Pakaian Wanita",
+    "Sweater & Cardigan"
+  ],
+  "price": 239900,
+  "price_min": 239900,
+  "price_max": 549900,
+  "price_before_discount": 549900,
+  "discount": 0,
+  "currency": "IDR",
+  "stock": null,
+  "sold": null,
+  "rating": 4.928571428571429,
+  "rating_count": null,
+  "images": [],
+  "tier_variations": [
+    {
+      "name": "Warna",
+      "options": [
+        "Black",
+        "Dusty Pink",
+        "Light Grey",
+        "Sky Blue",
+        "White"
+      ],
+      "images": [
+        "https://down-id.img.susercontent.com/file/id-11134207-81ztq-msb8ex3ugd1i90",
+        "https://down-id.img.susercontent.com/file/id-11134207-81ztc-msb8ex47py4qb5",
+        "https://down-id.img.susercontent.com/file/id-11134207-81ztq-msb8ex47rcp659",
+        "https://down-id.img.susercontent.com/file/id-11134207-81ztn-msb8ex47sr9ma9",
+        "https://down-id.img.susercontent.com/file/id-11134207-81ztl-msb8ex47u5u26e"
+      ]
+    },
+    {
+      "name": "Ukuran",
+      "options": [
+        "S-M",
+        "L-XL"
+      ],
+      "images": []
+    }
+  ],
+  "models": [
+    {
+      "name": "Black,S-M",
+      "price": 239900,
+      "price_before_discount": 549900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "White,L-XL",
+      "price": 239900,
+      "price_before_discount": 549900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Light Grey,S-M",
+      "price": 239900,
+      "price_before_discount": 549900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Sky Blue,L-XL",
+      "price": 239900,
+      "price_before_discount": 549900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Black,L-XL",
+      "price": 239900,
+      "price_before_discount": 549900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Sky Blue,S-M",
+      "price": 239900,
+      "price_before_discount": 549900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Dusty Pink,S-M",
+      "price": 549900,
+      "price_before_discount": 0,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Light Grey,L-XL",
+      "price": 239900,
+      "price_before_discount": 549900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "White,S-M",
+      "price": 239900,
+      "price_before_discount": 549900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Dusty Pink,L-XL",
+      "price": 239900,
+      "price_before_discount": 549900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    }
+  ],
+  "scraped_at": "2026-09-04T18:51:59.577Z"
+}

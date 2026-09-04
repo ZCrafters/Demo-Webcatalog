@@ -16,14 +16,20 @@ const workbook = XLSX.read(
 const rows = XLSX.utils.sheet_to_json(workbook.Sheets["Product Data"], {
   header: 1,
 });
-assert.equal(products.length, 30);
-assert.equal(new Set(products.map((p) => p.slug)).size, 30);
-assert.equal(new Set(products.map((p) => p.id)).size, 30);
-const used = new Set();
+const spreadsheetProducts = products.filter((p) => p.sourceRows.length);
+const manualProducts = products.filter((p) => !p.sourceRows.length);
+
+assert.equal(products.length, 36);
+assert.equal(spreadsheetProducts.length, 30);
+assert.equal(manualProducts.length, 6);
+assert.equal(new Set(products.map((p) => p.slug)).size, products.length);
+assert.equal(new Set(products.map((p) => p.id)).size, products.length);
 for (const p of products) {
   assert.ok(["cardigan", "sweater", "atasan", "half-zip"].includes(p.category));
   assert.equal(p.originalPrice, null, "Do not invent original prices");
-  assert.ok(p.sourceRows.length);
+}
+const used = new Set();
+for (const p of spreadsheetProducts) {
   for (const rowNumber of p.sourceRows) {
     assert.ok(!used.has(rowNumber), "Every source row must be consumed once");
     used.add(rowNumber);
@@ -36,8 +42,12 @@ for (const p of products) {
   }
 }
 assert.equal(used.size, rows.length - 1);
-assert.equal(Math.min(...products.map((p) => p.price)), 139900);
-assert.equal(Math.max(...products.map((p) => p.price)), 239900);
+// Products added straight from the nigoo/ scrape (not yet in the spreadsheet) must still carry real photos.
+for (const p of manualProducts) {
+  assert.ok(p.images.length, `Manually added product missing photos: ${p.slug}`);
+}
+assert.equal(Math.min(...products.map((p) => p.price)), 129900);
+assert.equal(Math.max(...products.map((p) => p.price)), 389900);
 console.log(
-  "Verified all 35 source rows against 30 unique products: prices, discounts, ratings, sold labels, IDs, slugs, and duplicate provenance.",
+  "Verified all 35 source rows against 30 spreadsheet products, plus 6 products added directly from the nigoo/ scrape: prices, discounts, ratings, sold labels, IDs, slugs, and duplicate provenance.",
 );

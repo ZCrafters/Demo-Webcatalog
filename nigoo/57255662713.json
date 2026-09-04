@@ -1,0 +1,73 @@
+{
+  "name": "NIGOO Rhea Cardigan Rajut Knitwear Wanita",
+  "url": "https://shopee.co.id/product/undefined/undefined",
+  "description": "Tinggi Model 174 cm\nBahan : 100% Viscose  Knit\nUkuran : All Size Fit To XL\nDetail Size :\nLebar Dada         : 110 cm\nPanjang Baju      : 60 cm\nPanjang Lengan : 55 cm\n\nWarna yang terlihat pada gambar mungkin tidak 100% sama dengan produk yang sebenarnya, disebabkan karna proses pencahayaan pada pengambilan gambar atau kualitas layar gadget yang digunakan untuk melihat gambar.\n\nUntuk pembelian online, mohon pertimbangkan toleransi perbedaan warna dan ukuran produk yang dipesan. Apabila setelah barang diterima terdapat perbedaan yang dianggap terlalu jauh dan tidak dapat diterima, silahkan ajukan penukaran barang melalui Customer Service kami.\n\nMohon buat video unboxing mulai dari sebelum paket dibuka. Tanpa video unboxing, mohon maaf kami tidak dapat menerima complaint (terutama atas kekurangan jumlah barang).\n\nHappy shopping",
+  "brand": "Nigoo",
+  "categories": [
+    "Pakaian Wanita",
+    "Sweater & Cardigan"
+  ],
+  "price": 199900,
+  "price_min": 199900,
+  "price_max": 199900,
+  "price_before_discount": 349900,
+  "discount": 0,
+  "currency": "IDR",
+  "stock": null,
+  "sold": null,
+  "rating": 4.9397590361445785,
+  "rating_count": null,
+  "images": [],
+  "tier_variations": [
+    {
+      "name": "Warna",
+      "options": [
+        "Black",
+        "Brown",
+        "Grey",
+        "Cream"
+      ],
+      "images": [
+        "https://down-id.img.susercontent.com/file/id-11134207-8224r-mk51k3psjz0obb",
+        "https://down-id.img.susercontent.com/file/id-11134207-8224s-mk51k3psldl4a9",
+        "https://down-id.img.susercontent.com/file/id-11134207-8224w-mk51k3psms5kae",
+        "https://down-id.img.susercontent.com/file/id-11134207-8224s-mk51k3pso6q026"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Grey",
+      "price": 199900,
+      "price_before_discount": 0,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Cream",
+      "price": 199900,
+      "price_before_discount": 349900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Black",
+      "price": 199900,
+      "price_before_discount": 349900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Brown",
+      "price": 199900,
+      "price_before_discount": 0,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    }
+  ],
+  "scraped_at": "2026-09-04T18:52:08.008Z"
+}

@@ -1,0 +1,93 @@
+{
+  "name": "NIGOO Olive Cardigan Knitwear Wanita",
+  "url": "https://shopee.co.id/product/undefined/undefined",
+  "description": "Tinggi Model 168cm\nBahan : Knit Acrylic\nUkuran : All Size Fit To L\n\nDetail Size :\nLebar Dada : 100 cm\nPanjang Baju : 52 cm\nPanjang Lengan : 55 cm\n\nWarna yang terlihat pada gambar mungkin tidak 100% sama dengan produk yang sebenarnya, disebabkan karna proses pencahayaan pada pengambilan gambar atau kualitas layar gadget yang digunakan untuk melihat gambar.\n\nUntuk pembelian online, mohon pertimbangkan toleransi perbedaan warna dan ukuran produk yang dipesan. Apabila setelah barang diterima terdapat perbedaan yang dianggap terlalu jauh dan tidak dapat diterima, silahkan ajukan penukaran barang melalui Customer Service kami.\n\nMohon buat video unboxing mulai dari sebelum paket dibuka. Tanpa video unboxing, mohon maaf kami tidak dapat menerima complaint (terutama atas kekurangan jumlah barang).\n\nHappy shopping",
+  "brand": "Nigoo",
+  "categories": [
+    "Pakaian Wanita",
+    "Sweater & Cardigan"
+  ],
+  "price": 149900,
+  "price_min": 149900,
+  "price_max": 149900,
+  "price_before_discount": 269900,
+  "discount": 0,
+  "currency": "IDR",
+  "stock": null,
+  "sold": null,
+  "rating": 4.869105380799215,
+  "rating_count": null,
+  "images": [],
+  "tier_variations": [
+    {
+      "name": "Warna",
+      "options": [
+        "Broken White",
+        "Maroon",
+        "Black",
+        "Navy",
+        "Dark Grey",
+        "Light Grey"
+      ],
+      "images": [
+        "https://down-id.img.susercontent.com/file/id-11134207-7r98t-lzxjuglo9ryz25",
+        "https://down-id.img.susercontent.com/file/id-11134207-7r992-lzxjuglodzobc6",
+        "https://down-id.img.susercontent.com/file/id-11134207-7r98w-lzxjuglob6jfad",
+        "https://down-id.img.susercontent.com/file/id-11134207-7r98t-lzxjuglofe8r09",
+        "https://down-id.img.susercontent.com/file/id-11134207-7r98y-lzxjuglocl3v9c",
+        "https://down-id.img.susercontent.com/file/id-11134207-7r98v-lzxjuglogst774"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Dark Grey",
+      "price": 149900,
+      "price_before_discount": 269900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Light Grey",
+      "price": 149900,
+      "price_before_discount": 269900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Broken White",
+      "price": 149900,
+      "price_before_discount": 269900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Maroon",
+      "price": 149900,
+      "price_before_discount": 269900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Black",
+      "price": 149900,
+      "price_before_discount": 269900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Navy",
+      "price": 149900,
+      "price_before_discount": 269900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    }
+  ],
+  "scraped_at": "2026-09-04T18:51:39.337Z"
+}

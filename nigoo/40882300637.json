@@ -1,0 +1,131 @@
+{
+  "name": "NIGOO Ayla Cardigan Rajut Knitwear Wanita",
+  "url": "https://shopee.co.id/product/undefined/undefined",
+  "description": "Tinggi Model 175 cm\nBahan : 100% Viscose Knit\nUkuran : S-M, L-XL\nDetail Size S-M:\nLebar Dada : 100 cm\nPanjang Baju : 55 cm\nPanjang Lengan : 55 cm\nDetail Size L-XL:\nLebar Dada : 110 cm\nPanjang Baju : 60 cm\nPanjang Lengan : 55 cm\nWarna yang terlihat pada gambar mungkin tidak 100% sama dengan produk yang sebenarnya, disebabkan karna proses pencahayaan pada pengambilan gambar atau kualitas layar gadget yang digunakan untuk melihat gambar.\nUntuk pembelian online, mohon pertimbangkan toleransi perbedaan warna dan ukuran produk yang dipesan. Apabila setelah barang diterima terdapat perbedaan yang dianggap terlalu jauh dan tidak dapat diterima, silahkan ajukan penukaran barang melalui Customer Service kami.\nMohon buat video unboxing mulai dari sebelum paket dibuka. Tanpa video unboxing, mohon maaf kami tidak dapat menerima complaint (terutama atas kekurangan jumlah barang).\nHappy shopping",
+  "brand": "Nigoo",
+  "categories": [
+    "Pakaian Wanita",
+    "Sweater & Cardigan"
+  ],
+  "price": 229900,
+  "price_min": 229900,
+  "price_max": 229900,
+  "price_before_discount": 489900,
+  "discount": 0,
+  "currency": "IDR",
+  "stock": null,
+  "sold": null,
+  "rating": 4.976190476190476,
+  "rating_count": null,
+  "images": [],
+  "tier_variations": [
+    {
+      "name": "Warna",
+      "options": [
+        "Mint",
+        "Black",
+        "Oat",
+        "Denim",
+        "Grey"
+      ],
+      "images": [
+        "https://down-id.img.susercontent.com/file/id-11134207-81ztl-mq98zo7omrd7cb",
+        "https://down-id.img.susercontent.com/file/id-11134207-81zto-mq98zo7oo5xn15",
+        "https://down-id.img.susercontent.com/file/id-11134207-81ztg-mq98zo7opki347",
+        "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mq98zo7oqz2j8c",
+        "https://down-id.img.susercontent.com/file/id-11134207-81ztp-mq98zo7osdmzba"
+      ]
+    },
+    {
+      "name": "Ukuran",
+      "options": [
+        "S-M",
+        "L-XL"
+      ],
+      "images": []
+    }
+  ],
+  "models": [
+    {
+      "name": "Oat,S-M",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Oat,L-XL",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Denim,L-XL",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Grey,L-XL",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Mint,L-XL",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Grey,S-M",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Black,S-M",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Mint,S-M",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Denim,S-M",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    },
+    {
+      "name": "Black,L-XL",
+      "price": 229900,
+      "price_before_discount": 489900,
+      "stock": null,
+      "sold": null,
+      "sku": null
+    }
+  ],
+  "scraped_at": "2026-09-04T18:51:50.909Z"
+}
