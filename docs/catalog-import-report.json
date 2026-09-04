@@ -1,0 +1,257 @@
+{
+  "source": "nigoo-data-produk-shopee.xlsx",
+  "sheet": "Product Data",
+  "rawRows": 35,
+  "uniqueProducts": 30,
+  "duplicates": [
+    {
+      "sourceRow": 32,
+      "mergedIntoId": 23,
+      "name": "Cami Top"
+    },
+    {
+      "sourceRow": 33,
+      "mergedIntoId": 14,
+      "name": "Mimi Cardigan"
+    },
+    {
+      "sourceRow": 34,
+      "mergedIntoId": 3,
+      "name": "Lily Sweater"
+    },
+    {
+      "sourceRow": 35,
+      "mergedIntoId": 4,
+      "name": "Choco Sweater"
+    },
+    {
+      "sourceRow": 36,
+      "mergedIntoId": 10,
+      "name": "Lolly Cardigan"
+    }
+  ],
+  "assumptions": [
+    "Harga memakai nilai sumber tanpa menghitung diskon ulang.",
+    "Harga sebelum diskon tidak tersedia.",
+    "Kategori dan nama tampilan diturunkan dari nama produk.",
+    "Terjual dengan RB+ adalah batas bawah, bukan angka pasti.",
+    "Stok dan varian belum tersedia."
+  ],
+  "products": [
+    {
+      "id": 1,
+      "slug": "alinea-cardigan",
+      "sourceRows": [
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "poppy-cardigan",
+      "sourceRows": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "lily-sweater",
+      "sourceRows": [
+        4,
+        34
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "choco-sweater",
+      "sourceRows": [
+        5,
+        35
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "zoe-half-zip-knitwear-cable-sweater",
+      "sourceRows": [
+        6
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "bianca-cable-sweater",
+      "sourceRows": [
+        7
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "alira-sweater",
+      "sourceRows": [
+        8
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "dalila-cardigan",
+      "sourceRows": [
+        9
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "elva-oversize-knit-sweater",
+      "sourceRows": [
+        10
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "lolly-cardigan",
+      "sourceRows": [
+        11,
+        36
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "miria-oversize-top",
+      "sourceRows": [
+        12
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "olive-cardigan",
+      "sourceRows": [
+        13
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "noa-knit-top",
+      "sourceRows": [
+        14
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "mimi-cardigan",
+      "sourceRows": [
+        15,
+        33
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "orchi-cardigan",
+      "sourceRows": [
+        16
+      ]
+    },
+    {
+      "id": 16,
+      "slug": "ayla-cardigan",
+      "sourceRows": [
+        17
+      ]
+    },
+    {
+      "id": 17,
+      "slug": "petali-cardigan",
+      "sourceRows": [
+        18
+      ]
+    },
+    {
+      "id": 18,
+      "slug": "yori-stripe-cardigan",
+      "sourceRows": [
+        19
+      ]
+    },
+    {
+      "id": 19,
+      "slug": "finola-cable-cardigan",
+      "sourceRows": [
+        20
+      ]
+    },
+    {
+      "id": 20,
+      "slug": "rosie-highneck-knit-cardigan",
+      "sourceRows": [
+        21
+      ]
+    },
+    {
+      "id": 21,
+      "slug": "linetta-polo-sweater",
+      "sourceRows": [
+        22
+      ]
+    },
+    {
+      "id": 22,
+      "slug": "nomi-cardigan",
+      "sourceRows": [
+        23
+      ]
+    },
+    {
+      "id": 23,
+      "slug": "cami-top",
+      "sourceRows": [
+        24,
+        32
+      ]
+    },
+    {
+      "id": 24,
+      "slug": "gradia-oversize-sweater",
+      "sourceRows": [
+        25
+      ]
+    },
+    {
+      "id": 25,
+      "slug": "dotty-cardigan",
+      "sourceRows": [
+        26
+      ]
+    },
+    {
+      "id": 26,
+      "slug": "anggrea-knit-cardigan",
+      "sourceRows": [
+        27
+      ]
+    },
+    {
+      "id": 27,
+      "slug": "daisy-cardigan",
+      "sourceRows": [
+        28
+      ]
+    },
+    {
+      "id": 28,
+      "slug": "josie-sweater",
+      "sourceRows": [
+        29
+      ]
+    },
+    {
+      "id": 29,
+      "slug": "arlen-sweater",
+      "sourceRows": [
+        30
+      ]
+    },
+    {
+      "id": 30,
+      "slug": "senna-stripe-sweater",
+      "sourceRows": [
+        31
+      ]
+    }
+  ]
+}

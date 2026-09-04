@@ -1,0 +1,37 @@
+name: Import Catalog from XLSX
+
+on:
+  push:
+    paths:
+      - 'data/nigoo-data-produk-shopee.xlsx'
+      - 'data/product-overrides.json'
+  workflow_dispatch:
+
+jobs:
+  import-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run import script
+        run: npm run import-catalog
+
+      - name: Commit and push products.json if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/products.json docs/catalog-import-report.json
+          git diff --staged --quiet || git commit -m "Update Nigoo catalog from source workbook"
+          git push
