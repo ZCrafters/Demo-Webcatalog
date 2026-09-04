@@ -1,35 +1,14 @@
-/* Persistent desktop navigation; the mobile dialog uses native modal focus management. */
-:root {
-  --sidebar-width: 260px;
-}
+/* Sticky top navigation replaces the old fixed sidebar layout. */
 #main-content,
-.site-footer,
-.announcement {
-  margin-left: var(--sidebar-width);
+.site-footer {
+  margin-left: 0;
 }
-.desktop-sidebar {
-  position: fixed;
-  inset: 0 auto 0 0;
-  width: var(--sidebar-width);
-  height: 100dvh;
-  z-index: 40;
-  padding: 40px 28px 22px;
-  display: flex;
-  flex-direction: column;
-  background: var(--page);
-  border-right: 1px solid var(--line);
-  overflow-y: auto;
-}
-.desktop-sidebar > .wordmark {
-  align-self: flex-start;
-  margin-bottom: 50px;
-}
-.sidebar-links {
+.drawer-links {
   display: flex;
   flex-direction: column;
 }
-.sidebar-links > a,
-.sidebar-categories > summary {
+.drawer-links > a,
+.drawer-categories > summary {
   min-height: 52px;
   display: flex;
   align-items: center;
@@ -39,55 +18,55 @@
   text-transform: uppercase;
   padding: 12px 0;
 }
-.sidebar-links a.active {
+.drawer-links a.active {
   color: var(--primary);
   font-weight: 700;
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-underline-offset: 7px;
 }
-.sidebar-links a:hover {
+.drawer-links a:hover {
   color: var(--primary);
 }
-.sidebar-categories {
+.drawer-categories {
   border: 0;
   padding: 0;
 }
-.sidebar-categories[data-active="true"] > summary {
+.drawer-categories[data-active="true"] > summary {
   font-weight: 700;
   color: var(--primary);
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-underline-offset: 7px;
 }
-.sidebar-categories > summary {
+.drawer-categories > summary {
   list-style: none;
 }
-.sidebar-categories > summary::-webkit-details-marker {
+.drawer-categories > summary::-webkit-details-marker {
   display: none;
 }
-.sidebar-categories summary svg {
+.drawer-categories summary svg {
   transition: transform 200ms ease;
 }
-.sidebar-categories[open] summary svg {
+.drawer-categories[open] summary svg {
   transform: rotate(180deg);
 }
-.sidebar-categories > div {
+.drawer-categories > div {
   padding: 0 0 12px 15px;
 }
-.sidebar-categories a {
+.drawer-categories a {
   display: flex;
   min-height: 44px;
   align-items: center;
   font-size: 12px;
 }
-.sidebar-tools {
+.drawer-tools {
   border-top: 1px solid var(--line);
   padding-top: 20px;
   margin-top: 20px;
 }
-.sidebar-tools > button,
-.sidebar-tools > a {
+.drawer-tools > button,
+.drawer-tools > a {
   display: flex;
   gap: 13px;
   align-items: center;
@@ -100,7 +79,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.sidebar-count {
+.drawer-count {
   margin-left: auto;
   min-width: 23px;
   height: 23px;
@@ -110,52 +89,49 @@
   color: var(--primary);
   font-size: 10px;
 }
-.sidebar-search {
+.drawer-search {
   padding: 15px 0;
 }
-.sidebar-search label {
+.drawer-search label {
   display: block;
   font-size: 11px;
   margin-bottom: 10px;
 }
-.sidebar-search > div {
+.drawer-search > div {
   display: flex;
   border: 1px solid var(--line);
   background: white;
 }
-.sidebar-search input {
+.drawer-search input {
   width: 100%;
   min-width: 0;
   border: 0;
   padding: 10px;
 }
-.sidebar-search button {
+.drawer-search button {
   flex-shrink: 0;
 }
-.sidebar-bottom {
+.drawer-bottom {
   margin-top: auto;
   padding-top: 35px;
 }
-.sidebar-bottom > p {
+.drawer-bottom > p {
   font-size: 10px;
   color: var(--muted);
   margin-bottom: 12px;
 }
-.sidebar-bottom > a {
+.drawer-bottom > a {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 44px;
   font-size: 11px;
 }
-.sidebar-bottom > small {
+.drawer-bottom > small {
   display: block;
   font-size: 9px;
   margin-top: 22px;
   color: var(--muted);
-}
-.mobile-bar {
-  display: none;
 }
 .navigation-dialog {
   padding: 0;
@@ -190,7 +166,7 @@
   align-items: center;
   margin-bottom: 32px;
 }
-.announcement button {
+.promo-bar button {
   display: grid;
   place-items: center;
 }
@@ -334,40 +310,6 @@
   }
 }
 @media (max-width: 1023px) {
-  #main-content,
-  .site-footer,
-  .announcement {
-    margin-left: 0;
-  }
-  .desktop-sidebar {
-    display: none;
-  }
-  .mobile-bar {
-    position: sticky;
-    top: 0;
-    z-index: 35;
-    height: 64px;
-    padding: 0 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--line);
-    background: var(--page);
-  }
-  .mobile-bar .wordmark {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 33px;
-  }
-  .mobile-cart {
-    display: flex;
-    gap: 8px;
-    min-width: 44px;
-    min-height: 44px;
-    align-items: center;
-    font-size: 10px;
-  }
   .banner-hero {
     height: calc(100svh - 108px);
     min-height: 460px;

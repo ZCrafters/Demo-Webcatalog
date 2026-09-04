@@ -39,6 +39,53 @@ export function ProductImage({ product, className = "" }) {
     </div>
   );
 }
+export function ProductGallery({ product }) {
+  const images = product?.images?.filter(Boolean) || [];
+  const [active, setActive] = useState(0);
+  const [failed, setFailed] = useState({});
+  if (!images.length) return <ProductImage product={product} />;
+  const current = images[active];
+  return (
+    <div className="product-gallery">
+      <div className="product-gallery-main">
+        {failed[current] ? (
+          <div className="photo-placeholder" role="img" aria-label={`Photo of ${product.name} coming soon`}>
+            <span className="placeholder-mark" aria-hidden="true">n.</span>
+            <span>Photo coming soon</span>
+          </div>
+        ) : (
+          <img
+            key={current}
+            src={current}
+            alt={product.name}
+            loading="eager"
+            onError={() => setFailed((f) => ({ ...f, [current]: true }))}
+          />
+        )}
+      </div>
+      {images.length > 1 && (
+        <div className="product-gallery-thumbs" role="tablist" aria-label="Product images">
+          {images.map((src, i) => (
+            <button
+              key={src}
+              className={`gallery-thumb${i === active ? " active" : ""}`}
+              aria-label={`Show image ${i + 1}`}
+              aria-current={i === active}
+              onClick={() => setActive(i)}
+            >
+              <img
+                src={src}
+                alt=""
+                loading="lazy"
+                onError={(e) => { e.currentTarget.style.display = "none"; }}
+              />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 export function ProductCard({ product }) {
   return (
     <article className="product-card">

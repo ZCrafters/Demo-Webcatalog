@@ -1,5 +1,10 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { PromoBar } from "./PromoBar";
+import { TopNav } from "./TopNav";
+import { BottomNav } from "./BottomNav";
 import { Sidebar } from "./Sidebar";
+import { SearchPanel } from "./SearchPanel";
+import { ShopeeIcon, TikTokIcon } from "./SocialIcons";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import {
   Home,
@@ -12,29 +17,51 @@ import {
   NotFound,
 } from "./pages";
 import { brand, categories, products } from "./catalog";
+import { Seo } from "./Seo";
 
 function PagePosition() {
   const { pathname: rawPathname, hash } = useLocation();
   const pathname = rawPathname.replace(/\/+$/, "") || "/";
+  const product = products.find(
+    (p) =>
+      pathname === `/produk/${p.slug}` || pathname === `/product/${p.slug}`,
+  );
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-    const product = products.find(
-      (p) =>
-        pathname === `/produk/${p.slug}` || pathname === `/product/${p.slug}`,
-    );
-    const names = {
-      "/": "Knits made for every day",
-      "/catalog": "Collection",
-      "/about": "About Nigoo",
-      "/contact": "Contact us",
-      "/cart": "Cart",
-      "/checkout": "Demo checkout",
-    };
-    document.title = `${product?.name || names[pathname] || (pathname.startsWith("/kategori/") ? "Collection" : "Page not found")} | Nigoo`;
-    document.getElementById("main-content")?.focus({ preventScroll: true });
-    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+    if (hash) {
+      requestAnimationFrame(() => {
+        document.getElementById(hash.slice(1))?.scrollIntoView();
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [pathname, hash]);
-  return null;
+
+  const names = {
+    "/": { title: "Knits made for every day", desc: "Women's cardigans, sweaters, and knit tops by Nigoo." },
+    "/catalog": { title: "Collection" },
+    "/about": { title: "About Nigoo" },
+    "/contact": { title: "Contact us" },
+    "/cart": { title: "Cart" },
+    "/checkout": { title: "Demo checkout" },
+  };
+  const isCategory = pathname.startsWith("/kategori/");
+  const categorySlug = isCategory ? pathname.split("/")[2] : null;
+  const meta = product
+    ? { title: product.name, ogImage: product.images?.[0] }
+    : names[pathname] || (isCategory ? { title: "Collection" } : { title: "Page not found" });
+
+  return (
+    <>
+      <Seo
+        title={meta.title}
+        description={product?.description || meta.desc}
+        ogImage={meta.ogImage}
+        product={product}
+        categorySlug={isCategory ? categorySlug : product?.category}
+      />
+    </>
+  );
 }
 
 function Footer() {
@@ -43,7 +70,7 @@ function Footer() {
       <div className="footer-main">
         <div className="footer-brand">
           <Link className="wordmark" to="/">
-            nigoo.
+            nigoo<span>.</span>
           </Link>
           <p>
             Knits made for every day.
@@ -68,13 +95,14 @@ function Footer() {
         </div>
         <div>
           <h2>Find us</h2>
-          <a href={brand.shopee} target="_blank" rel="noreferrer">
-            Shopee <span aria-hidden="true">↗</span>
+          <a href={brand.shopee} target="_blank" rel="noreferrer" className="social-link">
+            <ShopeeIcon />
+            <span>Shopee · @nigoo.id</span>
           </a>
-          <a href={brand.tiktok} target="_blank" rel="noreferrer">
-            TikTok <span aria-hidden="true">↗</span>
+          <a href={brand.tiktok} target="_blank" rel="noreferrer" className="social-link">
+            <TikTokIcon />
+            <span>TikTok · @knitgoods.id</span>
           </a>
-          <p>@nigoo.id / @knitgoods.id</p>
         </div>
       </div>
       <div className="footer-bottom">
@@ -87,14 +115,48 @@ function Footer() {
 }
 
 export function Storefront() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
+  const handleMenu = useCallback(() => {
+    setDrawerOpen(true);
+  }, []);
+
+  const handleDrawerClose = useCallback(() => {
+    setDrawerOpen(false);
+  }, []);
+
+  const handleSearchOpen = useCallback(() => {
+    setSearchOpen(true);
+  }, []);
+
+  const handleSearchClose = useCallback(() => {
+    setSearchOpen(false);
+  }, []);
+
   return (
     <>
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
-      <Sidebar />
+      <PromoBar />
+      <TopNav
+        key={isHome ? "overlay" : "solid"}
+        onMenu={handleMenu}
+        overlay={isHome}
+        onSearch={handleSearchOpen}
+      />
+      <Sidebar open={drawerOpen} onClose={handleDrawerClose} />
+      <SearchPanel open={searchOpen} onClose={handleSearchClose} />
+      <div id="nav-sentinel" aria-hidden="true" />
       <PagePosition />
-      <main id="main-content" tabIndex={-1}>
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className={isHome ? "has-overlay-hero" : ""}
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
@@ -109,6 +171,7 @@ export function Storefront() {
         </Routes>
       </main>
       <Footer />
+      <BottomNav onSearch={handleSearchOpen} />
     </>
   );
 }

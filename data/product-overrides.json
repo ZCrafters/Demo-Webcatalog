@@ -1,1 +1,242 @@
-{}
+{
+  "alinea-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/alineacardigana/800/1000",
+      "https://picsum.photos/seed/alineacardiganb/800/1000"
+    ],
+    "description": "The Alinea Cardigan is your everyday layer, knit with a relaxed silhouette that drapes effortlessly over any outfit. Its ribbed cuffs and hem add structure without sacrificing comfort. Pair it with jeans for a weekend coffee run or layer it over a dress for a softer, more polished look."
+  },
+  "poppy-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/poppycardigana/800/1000",
+      "https://picsum.photos/seed/poppycardiganb/800/1000"
+    ],
+    "description": "The Poppy Cardigan brings warmth and texture to your wardrobe with its fine-knit finish and open-front design. Lightweight yet cozy, it layers beautifully over tees and tops. A go-to piece for those in-between days when you need just a little extra comfort."
+  },
+  "lily-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/lilysweatera/800/1000",
+      "https://picsum.photos/seed/lilysweaterb/800/1000"
+    ],
+    "description": "The Lily Sweater is crafted for those who love a classic, unfussy knit. Its clean lines and soft fabric make it a natural choice for pairing with tailored trousers or your favourite denim. Effortless, comfortable, and quietly elegant."
+  },
+  "choco-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/chocosweatera/800/1000",
+      "https://picsum.photos/seed/chocosweaterb/800/1000"
+    ],
+    "description": "The Choco Sweater delivers a rich, tactile knit with a slightly relaxed fit. Its deep, warm tone adds depth to neutrals and works as a statement layering piece. Perfect for lazy weekends and casual outings alike."
+  },
+  "zoe-half-zip-knitwear-cable-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/zoehalfzipknitwearcablesweatera/800/1000",
+      "https://picsum.photos/seed/zoehalfzipknitwearcablesweaterb/800/1000"
+    ],
+    "description": "The Zoe Half Zip Knit Cable Sweater brings a sporty edge to cable-knit tradition. The half-zip collar lets you adjust the look from relaxed to refined, while the textured knit keeps things interesting. Ideal for transitioning between seasons with ease."
+  },
+  "bianca-cable-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/biancacablesweatera/800/1000",
+      "https://picsum.photos/seed/biancacablesweaterb/800/1000"
+    ],
+    "description": "The Bianca Cable Sweater is a classic reimagined with generous volume and an oversized fit. Its chunky cable pattern adds visual texture that stands out on its own or layered under a coat. The kind of sweater you reach for all season long."
+  },
+  "alira-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/alirasweatera/800/1000",
+      "https://picsum.photos/seed/alirasweaterb/800/1000"
+    ],
+    "description": "The Alira Sweater is all about understated charm. A fine-gauge knit with a relaxed silhouette, it skims the body without clinging. Its simplicity makes it endlessly versatile — dress it up with a skirt or keep it casual with jeans."
+  },
+  "dalila-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/dalilacardigana/800/1000",
+      "https://picsum.photos/seed/dalilacardiganb/800/1000"
+    ],
+    "description": "The Dalila Cardigan wraps you in soft, plush comfort. Its open-front cut and generous length make it an ideal layering piece for cooler days. Wear it open over a tank or buttoned up as a lightweight top."
+  },
+  "elva-oversize-knit-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/elvaoversizeknitsweatera/800/1000",
+      "https://picsum.photos/seed/elvaoversizeknitsweaterb/800/1000"
+    ],
+    "description": "The Elva Oversize Knit Sweater is made for maximum coziness. Its roomy cut and dropped shoulders create that effortlessly slouchy look. Tuck it into high-waisted jeans or wear it loose — it looks good either way."
+  },
+  "lolly-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/lollycardigana/800/1000",
+      "https://picsum.photos/seed/lollycardiganb/800/1000"
+    ],
+    "description": "The Lolly Cardigan is a sweet addition to any wardrobe. Its cropped length and fine knit make it perfect for layering without bulk. A charming piece that pairs beautifully with dresses and high-waisted bottoms."
+  },
+  "miria-oversize-top": {
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/miriaoversizetopa/800/1000",
+      "https://picsum.photos/seed/miriaoversizetopb/800/1000"
+    ],
+    "description": "The Miria Oversize Top is a relaxed knit essential with an easy, boxy silhouette. Breathable and lightweight, it layers well under cardigans or jackets and pairs naturally with everything from skirts to tailored pants."
+  },
+  "olive-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/olivecardigana/800/1000",
+      "https://picsum.photos/seed/olivecardiganb/800/1000"
+    ],
+    "description": "The Olive Cardigan combines timeless cable texture with a cosy, relaxed fit. Its longer hem provides extra coverage, making it a weekend staple you can throw over anything. The muted olive hue grounds any outfit."
+  },
+  "noa-knit-top": {
+    "images": [
+      "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/noaknittopa/800/1000",
+      "https://picsum.photos/seed/noaknittopb/800/1000"
+    ],
+    "description": "The Noa Knit Top is a ribbed essential cut for easy layering. Its slim silhouette hugs the body just enough to tuck into high-waisted bottoms without adding bulk. A foundational piece every knit wardrobe needs."
+  },
+  "mimi-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/mimicardigana/800/1000",
+      "https://picsum.photos/seed/mimicardiganb/800/1000"
+    ],
+    "description": "The Mimi Cardigan is the definition of easy layering. Its lightweight knit and clean finish make it comfortable enough for all-day wear. Whether draped over a tee or buttoned as a top, it fits seamlessly into your rotation."
+  },
+  "orchi-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/orchicardigana/800/1000",
+      "https://picsum.photos/seed/orchicardiganb/800/1000"
+    ],
+    "description": "The Orchi Cardigan opens with a soft drape and a relaxed, open-front shape. Its fluid fabric moves with you, making it an elegant layer for evenings out or casual mornings. Subtle texture adds quiet visual interest."
+  },
+  "ayla-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/aylacardigana/800/1000",
+      "https://picsum.photos/seed/aylacardiganb/800/1000"
+    ],
+    "description": "The Ayla Cardigan is an everyday essential with a touch of polish. Its fine-gauge knit and clean lines make it dressy enough for the office yet comfortable enough for home. A cardigan you will reach for without thinking."
+  },
+  "petali-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/petalicardigana/800/1000",
+      "https://picsum.photos/seed/petalicardiganb/800/1000"
+    ],
+    "description": "The Petali Cardigan wraps you in softness with its delicate knit and light-as-air feel. The open-front cut makes it easy to throw on as a finishing layer. Pair it with silk or cotton — it complements both with ease."
+  },
+  "yori-stripe-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/yoristripecardigana/800/1000",
+      "https://picsum.photos/seed/yoristripecardiganb/800/1000"
+    ],
+    "description": "The Yori Stripe Cardigan brings playful energy to your knit rotation with its horizontal stripe pattern. The relaxed fit keeps the look casual and approachable. A striped cardigan that adds personality to any simple outfit."
+  },
+  "finola-cable-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/finolacablecardigana/800/1000",
+      "https://picsum.photos/seed/finolacablecardiganb/800/1000"
+    ],
+    "description": "The Finola Cable Cardigan is a textured classic with deep, dimensional cable stitches running through its front panels. Its relaxed shape and generous length offer warmth without restriction. A statement knit that earns its place in your permanent collection."
+  },
+  "rosie-highneck-knit-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/rosiehighneckknitcardigana/800/1000",
+      "https://picsum.photos/seed/rosiehighneckknitcardiganb/800/1000"
+    ],
+    "description": "The Rosie Highneck Knit Cardigan combines the coverage of a high neck with the ease of a cardigan. Its tailored collar adds structure, while the soft knit keeps things comfortable. A refined piece for cooler days."
+  },
+  "linetta-polo-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/linettapolosweatera/800/1000",
+      "https://picsum.photos/seed/linettapolosweaterb/800/1000"
+    ],
+    "description": "The Linetta Polo Sweater reimagines the polo silhouette in soft knit. Its collared neckline and clean finish straddle casual and polished with ease. Tuck it into trousers or leave it untucked for a relaxed office look."
+  },
+  "nomi-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/nomicardigana/800/1000",
+      "https://picsum.photos/seed/nomicardiganb/800/1000"
+    ],
+    "description": "The Nomi Cardigan is cut for effortless layering with its relaxed, oversized shape and dropped shoulders. The thick knit provides warmth while maintaining an airy feel. A go-to topper for days when comfort comes first."
+  },
+  "cami-top": {
+    "images": [
+      "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/camitopa/800/1000",
+      "https://picsum.photos/seed/camitopb/800/1000"
+    ],
+    "description": "The Cami Top is a ribbed knit essential designed for everyday wear. Its lightweight fabric and slim cut make it the perfect base layer under blazers, cardigans, or worn alone with a high-waisted bottom. Simple, versatile, indispensable."
+  },
+  "gradia-oversize-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/gradiaoversizesweatera/800/1000",
+      "https://picsum.photos/seed/gradiaoversizesweaterb/800/1000"
+    ],
+    "description": "The Gradia Oversize Sweater is built for relaxed days. Its generous proportions and soft knit create a slouchy, comfortable look that pairs effortlessly with leggings or skinny jeans. The kind of sweater you never want to take off."
+  },
+  "dotty-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/dottycardigana/800/1000",
+      "https://picsum.photos/seed/dottycardiganb/800/1000"
+    ],
+    "description": "The Dotty Cardigan brings subtle pattern play to a classic cardigan shape. Its fine-knit construction keeps it lightweight and layer-friendly. A delicate dotted texture adds just enough detail to make it interesting without overwhelming."
+  },
+  "anggrea-knit-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/anggreaknitcardigana/800/1000",
+      "https://picsum.photos/seed/anggreaknitcardiganb/800/1000"
+    ],
+    "description": "The Anggrea Knit Cardigan offers a softer take on the traditional cardigan silhouette. Its flowing drap and ribbed edges create a feminine yet grounded look. Layer it over silk or cotton for a gentle contrast in textures."
+  },
+  "daisy-cardigan": {
+    "images": [
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/daisycardigana/800/1000",
+      "https://picsum.photos/seed/daisycardiganb/800/1000"
+    ],
+    "description": "The Daisy Cardigan is a wardrobe staple refined. Its classic cut and smooth knit make it the kind of piece you grab without thinking — and always feel good in. True to the Nigoo philosophy: personal style, born from knitwear."
+  },
+  "josie-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/josiesweatera/800/1000",
+      "https://picsum.photos/seed/josiesweaterb/800/1000"
+    ],
+    "description": "The Josie Sweater is a relaxed knit with just the right amount of structure. Its crew neckline and ribbed cuffs keep things classic, while the soft fabric drapes naturally. A faithful companion for everything from morning meetings to evening wind-downs."
+  },
+  "arlen-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/arlensweatera/800/1000",
+      "https://picsum.photos/seed/arlensweaterb/800/1000"
+    ],
+    "description": "The Arlen Sweater brings a clean, modern line to your knit collection. The smooth surface and relaxed silhouette let the fabric speak for itself. Minimalist in design, maximum in versatility."
+  },
+  "senna-stripe-sweater": {
+    "images": [
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=1000&fit=crop&auto=format&q=80",
+      "https://picsum.photos/seed/sennastripesweatera/800/1000",
+      "https://picsum.photos/seed/sennastripesweaterb/800/1000"
+    ],
+    "description": "The Senna Stripe Sweater pairs classic collegiate styling with the comfort of a fine knit. Its horizontal stripe pattern adds visual rhythm to any outfit. An easy choice for weekends when you want to look put together without trying too hard."
+  }
+}

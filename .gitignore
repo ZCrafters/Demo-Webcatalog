@@ -31,3 +31,8 @@ dist-ssr
 .cache/
 .env
 output/
+
+# Scraping study artifacts (reference research, not site assets)
+cartiera_all.html
+cartiera_endpoints.json
+cartiera_test.html

@@ -1,113 +1,134 @@
-import { CollectionBanner, Reveal } from "./CollectionBanner";
+import { Reveal } from "./CollectionBanner";
+import { HeroSlideshow } from "./HeroSlideshow";
 import { useContext, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { CartContext } from "./CartProvider";
 import { brand, categories, categoryName, products, rupiah } from "./catalog";
+import { ShopeeIcon, TikTokIcon } from "./SocialIcons";
 import {
   ButtonLink,
   EmptyState,
   ProductGrid,
+  ProductGallery,
   ProductImage,
 } from "./components";
+import homeSections from "./sections";
 
 export function Home() {
-  const favorites = [...products]
-    .sort((a, b) => b.soldCount - a.soldCount)
-    .slice(0, 8);
   return (
     <>
-      <CollectionBanner
-        variant="hero"
-        title="Knits made for every day."
-        label="THE EVERYDAY KNIT EDIT"
-        to="/catalog"
-        hero
-      />
-      <Reveal>
-        <section className="section editorial-products">
-          <div className="section-heading">
-            <h2>Curated picks for you.</h2>
-            <Link className="text-link" to="/catalog">
-              All products ({products.length}) ↗
-            </Link>
-          </div>
-          <ProductGrid products={products.slice(0, 8)} />
-        </section>
-      </Reveal>
-      <Reveal>
-        <CollectionBanner
-          variant="sweater"
-          title="Sweater, your way."
-          to="/kategori/sweater"
-        />
-      </Reveal>
-      <Reveal>
-        <section className="section editorial-products">
-          <div className="section-heading">
-            <h2>Top picks on Shopee.</h2>
-            <Link className="text-link" to="/catalog?sort=sold">
-              View collection ↗
-            </Link>
-          </div>
-          <ProductGrid products={favorites} />
-          <p className="source-note">
-            Ranked by units sold on Shopee. Current prices and availability
-            follow the official store.
-          </p>
-        </section>
-      </Reveal>
-      <Reveal>
-        <CollectionBanner
-          variant="cardigan"
-          title="Your favorite layer."
-          to="/kategori/cardigan"
-          label="CARDIGAN COLLECTION"
-        />
-      </Reveal>
-      <Reveal>
-        <section className="section editorial-products">
-          <div className="section-heading">
-            <h2>Find your cardigan.</h2>
-            <Link className="text-link" to="/kategori/cardigan">
-              View collection ↗
-            </Link>
-          </div>
-          <ProductGrid
-            products={products
-              .filter((p) => p.category === "cardigan")
-              .slice(0, 4)}
-          />
-        </section>
-      </Reveal>
-      <Reveal>
-        <section className="brand-statement">
-          <h2>
-            Personal style.
-            <br />
-            Born from knitwear.
-          </h2>
-          <Link className="text-link" to="/about">
-            Discover Nigoo ↗
-          </Link>
-        </section>
-      </Reveal>
-      <section className="social-section">
-        <h2>Stay close with Nigoo.</h2>
-        <p>
-          Explore the collection on Shopee and find style inspiration on TikTok.
-        </p>
-        <div className="social-links">
-          <a href={brand.shopee} target="_blank" rel="noreferrer">
-            <span>Shopee</span>
-            <span>@nigoo.id ↗</span>
-          </a>
-          <a href={brand.tiktok} target="_blank" rel="noreferrer">
-            <span>TikTok</span>
-            <span>@knitgoods.id ↗</span>
-          </a>
-        </div>
-      </section>
+      {homeSections.map((section, i) => {
+        switch (section.type) {
+          case "hero":
+            return <HeroSlideshow key="hero" />;
+          case "productGrid":
+            return <ProductGridSection key={section.id || i} {...section} />;
+          case "promoGrid":
+            return <PromoGridSection key={i} {...section} />;
+          case "brandStatement":
+            return <BrandStatementSection key="brand" />;
+          case "social":
+            return <SocialSection key="social" />;
+          default:
+            return null;
+        }
+      })}
     </>
+  );
+}
+
+function ProductGridSection({
+  title,
+  linkLabel,
+  to,
+  sort,
+  category,
+  limit,
+  note,
+}) {
+  const filtered = [...products]
+    .filter((p) => !category || p.category === category)
+    .sort((a, b) =>
+      sort === "sold" ? b.soldCount - a.soldCount : a.id - b.id,
+    )
+    .slice(0, limit || products.length);
+  return (
+    <Reveal>
+      <section className="section editorial-products">
+        <div className="section-heading">
+          <h2>{title}</h2>
+          {to && linkLabel && (
+            <Link className="text-link" to={to}>
+              {linkLabel} ↗
+            </Link>
+          )}
+        </div>
+        <ProductGrid products={filtered} />
+        {note && <p className="source-note">{note}</p>}
+      </section>
+    </Reveal>
+  );
+}
+
+function PromoGridSection({ title, to, label, variant }) {
+  return (
+    <Reveal>
+      <section className={`editorial-banner banner-${variant || "sweater"}`}>
+        <Link to={to} className="banner-link" aria-label={`${title}, view collection`}>
+          <div className="banner-photo-placeholder" aria-hidden="true">
+            <span>n.</span>
+            <small>Collection photo coming soon</small>
+          </div>
+          <div className="banner-caption">
+            {label && <p className="label">{label}</p>}
+            <h2>{title}</h2>
+            <span className="banner-cta">
+              View collection ↗
+            </span>
+          </div>
+        </Link>
+      </section>
+    </Reveal>
+  );
+}
+
+function BrandStatementSection({ title, subtitle }) {
+  return (
+    <Reveal>
+      <section className="brand-statement">
+        <h2>
+          {title}
+          <br />
+          {subtitle || ""}
+        </h2>
+        <Link className="text-link" to="/about">
+          Discover Nigoo ↗
+        </Link>
+      </section>
+    </Reveal>
+  );
+}
+
+function SocialSection() {
+  return (
+    <section className="social-section">
+      <h2>Stay close with Nigoo.</h2>
+      <p>
+        Explore the collection on Shopee and find style inspiration on TikTok.
+      </p>
+      <div className="social-links">
+        <a href={brand.shopee} target="_blank" rel="noreferrer">
+          <ShopeeIcon />
+          <span>Shopee</span>
+          <span>@nigoo.id ↗</span>
+        </a>
+        <a href={brand.tiktok} target="_blank" rel="noreferrer">
+          <TikTokIcon />
+          <span>TikTok</span>
+          <span>@knitgoods.id ↗</span>
+        </a>
+      </div>
+    </section>
   );
 }
 
@@ -246,11 +267,23 @@ export function ProductDetail() {
         <span>{product.name}</span>
       </nav>
       <div className="product-detail">
-        <ProductImage key={product.id} product={product} />
+        <ProductGallery key={product.id} product={product} />
         <div className="detail-copy">
           <p className="label">{categoryName(product.category)}</p>
           <h1>{product.name}</h1>
-          <p className="detail-price">{rupiah(product.price)}</p>
+          <div className="detail-price-row">
+            {product.originalPrice ? (
+              <>
+                <p className="detail-price">{rupiah(product.price)}</p>
+                <s className="detail-price-original">{rupiah(product.originalPrice)}</s>
+                {product.discountPercent ? (
+                  <span className="detail-discount">-{product.discountPercent}%</span>
+                ) : null}
+              </>
+            ) : (
+              <p className="detail-price">{rupiah(product.price)}</p>
+            )}
+          </div>
           <p className="product-meta">
             ☆ {product.rating.toFixed(1)} / 5{" "}
             <span>{product.soldLabel} sold on Shopee</span>
@@ -334,6 +367,16 @@ export function ProductDetail() {
 }
 
 export function About() {
+  const stats = {
+    total: products.length,
+    cardigan: products.filter((p) => p.category === "cardigan").length,
+    sweater: products.filter((p) => p.category === "sweater").length,
+    tops: products.filter((p) => p.category === "atasan").length,
+    halfZip: products.filter((p) => p.category === "half-zip").length,
+    avgRating: (
+      products.reduce((s, p) => s + p.rating, 0) / products.length
+    ).toFixed(1),
+  };
   return (
     <>
       <section className="about-intro section">
@@ -345,18 +388,16 @@ export function About() {
         </h1>
         <div className="about-body">
           <p>
-            Nigoo is a women&apos;s knitwear brand with a collection of
-            cardigans, sweaters, and knit tops.
+            Nigoo is a women&apos;s knitwear brand built around pieces you
+            actually want to wear.
           </p>
           <div>
             <p>
-              We offer thoughtfully crafted knitwear to complement your everyday
-              style — from layering cardigans to sweaters and tops worn exactly
-              your way.
-            </p>
-            <p>
-              Browse the full collection here, then discover available variants
-              and stock through Nigoo&apos;s official Shopee store.
+              We design knitwear that moves with your day — cardigans that
+              layer without bulk, sweaters that feel like a second skin, tops
+              that work from morning coffee to evening plans. Everything is
+              available through Nigoo&apos;s official Shopee store, where you
+              can browse variants, check stock, and order directly.
             </p>
             <ButtonLink to="/catalog">
               View collection <span aria-hidden="true">↗</span>
@@ -364,23 +405,83 @@ export function About() {
           </div>
         </div>
       </section>
-      <div className="about-banner">
-        <span className="hero-monogram" aria-hidden="true">
-          nigoo.
-        </span>
-        <span>Collection photos coming soon</span>
-      </div>
-      <section className="social-section">
-        <h2>Connect with us, every day.</h2>
-        <p>Find Nigoo on Shopee @nigoo.id and TikTok @knitgoods.id.</p>
-        <div className="social-links">
-          <a href={brand.shopee} target="_blank" rel="noreferrer">
-            Shop on Shopee <span>↗</span>
-          </a>
-          <a href={brand.tiktok} target="_blank" rel="noreferrer">
-            Follow on TikTok <span>↗</span>
-          </a>
+
+      <section className="about-values">
+        <div className="about-value">
+          <span className="about-value-icon">○</span>
+          <h3>Crafted to layer.</h3>
+          <p>
+            Every piece is designed to sit comfortably under a jacket or
+            stand on its own. No bulk, no fuss.
+          </p>
         </div>
+        <div className="about-value">
+          <span className="about-value-icon">○</span>
+          <h3>Made for every day.</h3>
+          <p>
+            Machine-washable knits in neutral and seasonal tones that pair
+            with everything you already own.
+          </p>
+        </div>
+        <div className="about-value">
+          <span className="about-value-icon">○</span>
+          <h3>Worn your way.</h3>
+          <p>
+            Oversized or fitted, dressed up or down — Nigoo fits your
+            silhouette, not the other way around.
+          </p>
+        </div>
+      </section>
+
+      <section className="about-stats">
+        <div className="about-stat">
+          <span className="about-stat-number">{stats.total}</span>
+          <span className="about-stat-label">pieces</span>
+        </div>
+        <div className="about-stat">
+          <span className="about-stat-number">{stats.cardigan}</span>
+          <span className="about-stat-label">cardigans</span>
+        </div>
+        <div className="about-stat">
+          <span className="about-stat-number">{stats.sweater}</span>
+          <span className="about-stat-label">sweaters</span>
+        </div>
+        <div className="about-stat">
+          <span className="about-stat-number">{stats.avgRating}</span>
+          <span className="about-stat-label">★ avg rating</span>
+        </div>
+      </section>
+
+      <section className="about-platforms">
+        <h2>Two places, one brand.</h2>
+        <div className="about-platform">
+          <ShopeeIcon />
+          <div>
+            <strong>Shopee</strong>
+            <span>Browse the full collection, pick your variant, and order.</span>
+            <span className="about-platform-handle">@nigoo.id</span>
+          </div>
+        </div>
+        <div className="about-platform">
+          <TikTokIcon />
+          <div>
+            <strong>TikTok</strong>
+            <span>Style inspiration, restock updates, and behind the scenes.</span>
+            <span className="about-platform-handle">@knitgoods.id</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-statement">
+        <div className="about-statement-overlay" />
+        <h2>
+          Personal style.
+          <br />
+          Born from knitwear.
+        </h2>
+        <Link className="text-link" to="/catalog">
+          Discover Nigoo ↗
+        </Link>
       </section>
     </>
   );
@@ -389,58 +490,19 @@ export function About() {
 export function Contact() {
   return (
     <div className="section contact-page">
-      <div className="page-heading">
-        <p className="label">CONTACT &amp; SOCIAL</p>
-        <h1>Find us here.</h1>
-        <p>
-          Need help with sizing, colors, or an order? Reach the seller directly
-          via chat in the Shopee store.
-        </p>
-      </div>
-      <div className="contact-channels">
-        <a href={brand.shopee} target="_blank" rel="noreferrer">
-          <span className="label">SHOP &amp; ENQUIRIES</span>
-          <h2>
-            Shopee <span>↗</span>
-          </h2>
-          <p>@nigoo.id</p>
-          <p>Full collection, variant options, and seller chat.</p>
+      <h1 className="contact-heading">Find us here.</h1>
+      <div className="social-rows">
+        <a href={brand.shopee} target="_blank" rel="noreferrer" className="social-row">
+          <ShopeeIcon />
+          <span className="social-name">Shopee</span>
+          <span className="social-handle">@nigoo.id ↗</span>
         </a>
-        <a href={brand.tiktok} target="_blank" rel="noreferrer">
-          <span className="label">INSPIRATION &amp; UPDATES</span>
-          <h2>
-            TikTok <span>↗</span>
-          </h2>
-          <p>@knitgoods.id</p>
-          <p>Explore the collection and get styling inspiration.</p>
+        <a href={brand.tiktok} target="_blank" rel="noreferrer" className="social-row">
+          <TikTokIcon />
+          <span className="social-name">TikTok</span>
+          <span className="social-handle">@knitgoods.id ↗</span>
         </a>
       </div>
-      <section className="shopping-guide" id="belanja">
-        <h2>Before you shop.</h2>
-        <details open>
-          <summary>How do I purchase?</summary>
-          <p>
-            Browse the catalog, then open Nigoo&apos;s Shopee store from the
-            product page. Find the same product, choose your variant, and
-            complete payment on Shopee.
-          </p>
-        </details>
-        <details>
-          <summary>Can I checkout on this website?</summary>
-          <p>
-            At this stage, the website cart and checkout are a demo simulation.
-            No payment is processed and no order is sent to the seller.
-          </p>
-        </details>
-        <details>
-          <summary>What about pricing, shipping, and returns?</summary>
-          <p>
-            Prices shown are reference figures from the Shopee catalog. Final
-            price, shipping fees, promotions, and return policies are governed
-            by the store and platform at the time of purchase.
-          </p>
-        </details>
-      </section>
     </div>
   );
 }

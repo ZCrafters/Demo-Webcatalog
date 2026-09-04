@@ -1,5 +1,43 @@
 {
-  "hero": { "src": null, "alt": "Koleksi rajut wanita Nigoo", "position": "center" },
-  "sweater": { "src": null, "alt": "Koleksi sweater Nigoo", "position": "center" },
-  "cardigan": { "src": null, "alt": "Koleksi cardigan Nigoo", "position": "center" }
+  "slides": [
+    {
+      "src": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=1400&h=700&fit=crop&auto=format&q=85",
+      "alt": "Knitwear collection",
+      "title": "Knits made for every day.",
+      "label": "THE EVERYDAY KNIT EDIT",
+      "to": "/catalog",
+      "position": "center"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=1400&h=700&fit=crop&auto=format&q=85",
+      "alt": "Sweater collection",
+      "title": "Sweater, your way.",
+      "label": "SWEATER COLLECTION",
+      "to": "/kategori/sweater",
+      "position": "center"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=1400&h=700&fit=crop&auto=format&q=85",
+      "alt": "Cardigan collection",
+      "title": "Your favorite layer.",
+      "label": "CARDIGAN COLLECTION",
+      "to": "/kategori/cardigan",
+      "position": "center"
+    }
+  ],
+  "hero": {
+    "src": null,
+    "alt": "Koleksi rajut wanita Nigoo",
+    "position": "center"
+  },
+  "sweater": {
+    "src": null,
+    "alt": "Koleksi sweater Nigoo",
+    "position": "center"
+  },
+  "cardigan": {
+    "src": null,
+    "alt": "Koleksi cardigan Nigoo",
+    "position": "center"
+  }
 }
