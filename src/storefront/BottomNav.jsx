@@ -11,7 +11,7 @@ export function BottomNav() {
         </NavLink>
         <NavLink to="/catalog">
           <Grid3x3 size={22} aria-hidden="true" />
-          <span>Produk</span>
+          <span>Products</span>
         </NavLink>
       </nav>
       <div className="bottom-nav-spacer" aria-hidden="true" />
