@@ -171,7 +171,7 @@ export function Storefront() {
         </Routes>
       </main>
       <Footer />
-      <BottomNav onSearch={handleSearchOpen} />
+      <BottomNav />
     </>
   );
 }

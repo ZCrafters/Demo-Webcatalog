@@ -239,8 +239,7 @@
     background: var(--page);
     border-top: 1px solid var(--line);
   }
-  .bottom-nav > a,
-  .bottom-nav-btn {
+  .bottom-nav > a {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -2143,24 +2142,26 @@ input, select, textarea { background: var(--card); }
   width: 100%;
   max-width: 380px;
   border-top: 1px solid var(--line);
-  margin-top: 30px;
-  text-align: left;
+  margin: 30px auto 0;
+  text-align: center;
 }
 .confirmed-row {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
   padding: 12px 0;
   border-bottom: 1px solid var(--line);
   font-size: 13px;
+  text-align: center;
 }
 .confirmed-row span {
   color: var(--muted);
+  font-size: 12px;
 }
 .confirmed-row strong {
   color: var(--ink);
-  text-align: right;
+  font-weight: 600;
   word-break: break-word;
 }
 @media (max-width: 767px) {
