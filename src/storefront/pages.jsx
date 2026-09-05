@@ -240,8 +240,7 @@ export function Catalog() {
         </div>
       )}
       <p className="source-note">
-        Reference prices sourced from Shopee catalog. Current availability,
-        variants, and promotions are confirmed at the official store.
+        Prices and availability are confirmed at checkout.
       </p>
     </div>
   );
@@ -286,60 +285,47 @@ export function ProductDetail() {
           </div>
           <p className="product-meta">
             ☆ {product.rating.toFixed(1)} / 5{" "}
-            <span>{product.soldLabel} sold on Shopee</span>
+            <span>{product.soldLabel} sold</span>
           </p>
           <p className="detail-description">{product.description}</p>
           <div className="product-availability">
             <p>Size &amp; color</p>
-            <span>
-              View available variants and latest stock on Shopee.
-            </span>
+            <span>In stock and ready to ship.</span>
           </div>
-          <a
-            className="button full-width"
-            href={brand.shopee}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Shop on Shopee <span aria-hidden="true">↗</span>
-          </a>
           <button
-            className="button button-outline full-width"
+            className="button full-width"
             onClick={() => {
               add(product.id);
               setAdded(product.id);
             }}
           >
-            Add to demo cart <span aria-hidden="true">+</span>
+            Add to bag
           </button>
           <div className="add-feedback" role="status">
             {added === product.id && (
               <>
                 Added.{" "}
                 <Link className="text-link" to="/cart">
-                  View cart →
+                  View bag →
                 </Link>
               </>
             )}
           </div>
           <p className="source-note">
-            The website cart is a demo only. Real purchases are available
-            through the official store.
+            This is a demo checkout — no real payment is processed.
           </p>
           <details>
             <summary>Product information</summary>
             <p>
               {product.sourceName.replace(/\.\.\.$/, "")}. Material details,
-              sizing, and care instructions follow the seller&apos;s information.
+              sizing, and care instructions are listed on each product.
             </p>
           </details>
           <details>
             <summary>Pricing &amp; shipping</summary>
             <p>
-              Reference price {rupiah(product.price)}. A discount of{" "}
-              {product.discountPercent}% is recorded on Shopee; promotions may
-              change. Final price and shipping are confirmed at checkout on
-              Shopee.
+              Price {rupiah(product.price)}. Shipping is calculated at
+              checkout.
             </p>
           </details>
         </div>
@@ -395,9 +381,8 @@ export function About() {
             <p>
               We design knitwear that moves with your day — cardigans that
               layer without bulk, sweaters that feel like a second skin, tops
-              that work from morning coffee to evening plans. Everything is
-              available through Nigoo&apos;s official Shopee store, where you
-              can browse variants, check stock, and order directly.
+              that work from morning coffee to evening plans. Browse the
+              collection, add to bag, and check out in minutes — right here.
             </p>
             <ButtonLink to="/catalog">
               View collection <span aria-hidden="true">↗</span>
@@ -458,7 +443,7 @@ export function About() {
           <ShopeeIcon />
           <div>
             <strong>Shopee</strong>
-            <span>Browse the full collection, pick your variant, and order.</span>
+            <span>Prefer marketplaces? Our official Shopee store is still running.</span>
             <span className="about-platform-handle">@nigoo.id</span>
           </div>
         </div>
@@ -517,9 +502,9 @@ function OrderSummary({ total, children }) {
       </div>
       <div>
         <span>Shipping</span>
-        <span>Not calculated</span>
+        <span>Calculated at checkout</span>
       </div>
-      <p>This is a shopping simulation. No payment will be charged.</p>
+      <p>Demo checkout — no real payment is processed.</p>
       {children}
     </aside>
   );
@@ -530,11 +515,11 @@ export function Cart() {
   return (
     <div className="section cart-page">
       <div className="page-heading">
-        <p className="label">DEMO CART</p>
+        <p className="label">YOUR BAG</p>
         <h1>Your picks.</h1>
       </div>
       {!items.length ? (
-        <EmptyState title="Your cart is empty.">
+        <EmptyState title="Your bag is empty.">
           Find your favorite knitwear in the Nigoo collection.
         </EmptyState>
       ) : (
@@ -582,7 +567,7 @@ export function Cart() {
             ))}
           </div>
           <OrderSummary total={total}>
-            <ButtonLink to="/checkout">Proceed to demo →</ButtonLink>
+            <ButtonLink to="/checkout">Proceed to checkout →</ButtonLink>
             <Link className="text-link" to="/catalog">
               Continue browsing
             </Link>
@@ -595,122 +580,142 @@ export function Cart() {
 
 export function Checkout() {
   const { items, total, clear } = useContext(CartContext);
-  const [complete, setComplete] = useState(false);
-  if (complete)
+  const [step, setStep] = useState(1);
+  const [method, setMethod] = useState("");
+  const [processing, setProcessing] = useState(false);
+  const [completed, setCompleted] = useState(null);
+  const [form, setForm] = useState({ name: "", phone: "", address: "", city: "", postcode: "" });
+
+  const updateForm = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+
+  const genOrderId = () => "NIG-" + Math.random().toString(36).slice(2, 8).toUpperCase();
+  const methodLabel = (m) => ({ qris: "QRIS", transfer: "Bank Transfer", wallet: "E-Wallet", cod: "COD" }[m] || m);
+  const methodDetail = (m) =>
+    ({ qris: "Scan via any payment app", transfer: "BCA / BRI / Mandiri", wallet: "GoPay / OVO / DANA", cod: "Pay on delivery" }[m] || "");
+
+  const pay = () => {
+    if (processing) return;
+    setProcessing(true);
+    setTimeout(() => {
+      const order = { id: genOrderId(), method, methodLabel: methodLabel(method), form, total };
+      clear();
+      setProcessing(false);
+      setCompleted(order);
+      window.scrollTo(0, 0);
+    }, 1500);
+  };
+
+  if (completed)
     return (
       <div className="section">
         <div className="empty-state">
-          <p className="label">SIMULATION COMPLETE</p>
+          <p className="label">ORDER CONFIRMED</p>
           <h1>Thank you.</h1>
-          <p>
-            You&apos;ve completed the demo checkout. No order was placed, no
-            payment was charged, and no address was saved.
+          <div className="order-confirmed-details">
+            <div className="confirmed-row"><span>Order</span><strong>{completed.id}</strong></div>
+            <div className="confirmed-row"><span>Payment</span><strong>{completed.methodLabel}</strong></div>
+            {completed.method !== "cod" && <div className="confirmed-row"><span>Total charged</span><strong>{rupiah(completed.total)}</strong></div>}
+            <div className="confirmed-row"><span>Shipping to</span><span>{completed.form.address}, {completed.form.city}</span></div>
+          </div>
+          <p className="source-note" style={{ marginTop: 24 }}>
+            Demo checkout — no real payment was processed.
           </p>
-          <a
-            className="button"
-            href={brand.shopee}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Shop on Shopee ↗
-          </a>
-          <ButtonLink outline to="/catalog">
-            View collection
-          </ButtonLink>
+          <ButtonLink to="/catalog">Continue shopping</ButtonLink>
         </div>
       </div>
     );
+
   if (!items.length)
     return (
       <div className="section">
-        <EmptyState title="No items selected yet.">
-          Add products to your cart to try the checkout flow.
+        <EmptyState title="Your bag is empty.">
+          Add products to your bag to continue.
         </EmptyState>
       </div>
     );
+
   return (
     <div className="section checkout-page">
       <div className="page-heading">
-        <p className="label">DEMO CHECKOUT</p>
-        <h1>Try the checkout flow.</h1>
-        <p>
-          Use sample details. This form does not send or store your address,
-          and no payment is processed.
-        </p>
+        <p className="label">CHECKOUT</p>
+        <h1>{step === 1 ? "Shipping" : "Payment"}</h1>
+        <div className="steps-indicator">
+          <span className={step >= 1 ? "active" : ""}>1 Shipping</span>
+          <span aria-hidden="true">→</span>
+          <span className={step >= 2 ? "active" : ""}>2 Payment</span>
+        </div>
       </div>
       <div className="cart-layout">
-        <form
-          id="checkout-form"
-          className="checkout-form"
-          onSubmit={(event) => {
-            event.preventDefault();
-            clear();
-            setComplete(true);
-            window.scrollTo(0, 0);
-          }}
-        >
-          <h2>Shipping address</h2>
-          <label htmlFor="name">Recipient name</label>
-          <input
-            id="name"
-            name="name"
-            autoComplete="off"
-            required
-            maxLength={100}
-          />
-          <label htmlFor="phone">Phone number</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            inputMode="tel"
-            autoComplete="off"
-            pattern="[+0-9() -]{8,20}"
-            title="Enter 8–20 digit phone number"
-            required
-          />
-          <label htmlFor="address">Full address</label>
-          <textarea
-            id="address"
-            name="address"
-            autoComplete="off"
-            required
-            maxLength={400}
-            rows={3}
-          />
-          <div className="form-columns">
-            <div>
-              <label htmlFor="city">City / district</label>
-              <input id="city" name="city" autoComplete="off" required />
+        {step === 1 ? (
+          <form
+            className="checkout-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setStep(2);
+              window.scrollTo(0, 0);
+            }}
+          >
+            <h2>Shipping address</h2>
+            <label htmlFor="name">Recipient name</label>
+            <input id="name" name="name" value={form.name} onChange={updateForm} autoComplete="off" required maxLength={100} />
+            <label htmlFor="phone">Phone number</label>
+            <input id="phone" name="phone" value={form.phone} onChange={updateForm} type="tel" inputMode="tel" autoComplete="off" pattern="[+0-9() -]{8,20}" title="Enter 8–20 digit phone number" required />
+            <label htmlFor="address">Full address</label>
+            <textarea id="address" name="address" value={form.address} onChange={updateForm} autoComplete="off" required maxLength={400} rows={3} />
+            <div className="form-columns">
+              <div>
+                <label htmlFor="city">City / district</label>
+                <input id="city" name="city" value={form.city} onChange={updateForm} autoComplete="off" required />
+              </div>
+              <div>
+                <label htmlFor="postcode">Postal code</label>
+                <input id="postcode" name="postcode" value={form.postcode} onChange={updateForm} inputMode="numeric" pattern="[0-9]{5}" title="Enter a 5-digit postal code" autoComplete="off" required />
+              </div>
             </div>
-            <div>
-              <label htmlFor="postcode">Postal code</label>
-              <input
-                id="postcode"
-                name="postcode"
-                inputMode="numeric"
-                pattern="[0-9]{5}"
-                title="Enter a 5-digit postal code"
-                autoComplete="off"
-                required
-              />
-            </div>
+            <button className="button" type="submit" style={{ marginTop: 32 }}>
+              Continue to payment
+            </button>
+          </form>
+        ) : (
+          <div className="checkout-payment">
+            <fieldset className="pay-methods">
+              <legend className="visually-hidden">Payment method</legend>
+              {["qris", "transfer", "wallet", "cod"].map((m) => (
+                <label key={m} className={`pay-method${method === m ? " selected" : ""}`}>
+                  <input type="radio" name="method" value={m} checked={method === m} onChange={() => setMethod(m)} />
+                  <div className="pay-method-info">
+                    <span className="pay-method-name">{methodLabel(m)}</span>
+                    <span className="pay-method-detail">{methodDetail(m)}</span>
+                  </div>
+                </label>
+              ))}
+            </fieldset>
           </div>
-        </form>
+        )}
         <OrderSummary total={total}>
           <ul className="summary-items">
             {items.map((item) => (
               <li key={item.id}>
-                <span>
-                  {item.name} × {item.quantity}
-                </span>
+                <span>{item.name} × {item.quantity}</span>
                 <span>{rupiah(item.price * item.quantity)}</span>
               </li>
             ))}
           </ul>
-          <button className="button" type="submit" form="checkout-form">
-            Complete simulation
-          </button>
+          {step === 2 && (
+            <>
+              <button
+                className="button full-width"
+                disabled={!method || processing}
+                aria-busy={processing}
+                onClick={pay}
+              >
+                {processing ? <><span className="loading-spinner" aria-hidden="true" /> Processing…</> : `Pay ${rupiah(total)}`}
+              </button>
+              <button className="text-link" style={{ justifyContent: "center", marginTop: 12 }} onClick={() => { setStep(1); window.scrollTo(0, 0); }}>
+                ← Back to shipping
+              </button>
+            </>
+          )}
         </OrderSummary>
       </div>
     </div>

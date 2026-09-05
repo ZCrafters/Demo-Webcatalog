@@ -25,12 +25,12 @@ const homeSections = [
   {
     type: "productGrid",
     id: "best",
-    title: "Top picks on Shopee.",
+    title: "Top picks this week.",
     linkLabel: "View collection",
     to: "/catalog?sort=sold",
     sort: "sold",
     limit: 8,
-    note: "Ranked by units sold on Shopee. Current prices and availability follow the official store.",
+    note: "Curated from the Nigoo collection.",
   },
   {
     type: "promoGrid",

@@ -60,57 +60,6 @@
   align-items: center;
   font-size: 12px;
 }
-.drawer-tools {
-  border-top: 1px solid var(--line);
-  padding-top: 20px;
-  margin-top: 20px;
-}
-.drawer-tools > button,
-.drawer-tools > a {
-  display: flex;
-  gap: 13px;
-  align-items: center;
-  width: 100%;
-  min-height: 48px;
-  border: 0;
-  padding: 0;
-  background: none;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.drawer-count {
-  margin-left: auto;
-  min-width: 23px;
-  height: 23px;
-  display: grid;
-  place-items: center;
-  background: var(--surface);
-  color: var(--primary);
-  font-size: 10px;
-}
-.drawer-search {
-  padding: 15px 0;
-}
-.drawer-search label {
-  display: block;
-  font-size: 11px;
-  margin-bottom: 10px;
-}
-.drawer-search > div {
-  display: flex;
-  border: 1px solid var(--line);
-  background: white;
-}
-.drawer-search input {
-  width: 100%;
-  min-width: 0;
-  border: 0;
-  padding: 10px;
-}
-.drawer-search button {
-  flex-shrink: 0;
-}
 .drawer-bottom {
   margin-top: auto;
   padding-top: 35px;

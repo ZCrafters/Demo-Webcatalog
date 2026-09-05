@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { categoryName } from "./catalog";
 
-const SITE = "https://www.cartiera.id"; // TODO: replace with real Nigoo domain before going live
+const SITE = "https://nigoo.vercel.app";
 
 function productJsonLd(product) {
   const images = (product.images || []).filter(Boolean);

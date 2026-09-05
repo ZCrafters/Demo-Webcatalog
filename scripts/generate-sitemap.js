@@ -9,7 +9,7 @@ const products = JSON.parse(
 const dist = path.join(root, "dist");
 fs.mkdirSync(dist, { recursive: true });
 
-const SITE = "https://www.cartiera.id"; // TODO: replace before launch
+const SITE = "https://nigoo.vercel.app";
 const lastmod = new Date().toISOString().split("T")[0];
 const staticPages = [
   { loc: "/", priority: "1.0", changefreq: "weekly" },

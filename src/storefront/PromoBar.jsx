@@ -1,15 +1,12 @@
 import { useState } from "react";
-import { X, ArrowUpRight } from "lucide-react";
-import { brand } from "./catalog";
+import { X } from "lucide-react";
 
 export function PromoBar() {
   const [show, setShow] = useState(true);
   if (!show) return null;
   return (
     <div className="promo-bar">
-      <a href={brand.shopee} target="_blank" rel="noreferrer">
-        Free shipping min. purchase IDR 199k <ArrowUpRight size={13} aria-hidden="true" />
-      </a>
+      <p className="promo-bar-text">Free shipping on orders over IDR 199k</p>
       <button
         aria-label="Close announcement"
         onClick={() => setShow(false)}
