@@ -70,15 +70,30 @@ function ProductGridSection({
   );
 }
 
-function PromoGridSection({ title, to, label, variant }) {
+function PromoGridSection({ title, to, label, variant, image, imageAlt, imagePosition }) {
+  const [failed, setFailed] = useState(false);
+  const hasImage = image && !failed;
   return (
     <Reveal>
-      <section className={`editorial-banner banner-${variant || "sweater"}`}>
+      <section
+        className={`editorial-banner banner-${variant || "sweater"}${hasImage ? " has-photo" : ""}`}
+      >
         <Link to={to} className="banner-link" aria-label={`${title}, view collection`}>
-          <div className="banner-photo-placeholder" aria-hidden="true">
-            <span>n.</span>
-            <small>Collection photo coming soon</small>
-          </div>
+          {hasImage ? (
+            <img
+              className="banner-photo"
+              src={image}
+              alt={imageAlt || title}
+              loading="lazy"
+              style={{ objectPosition: imagePosition || "center" }}
+              onError={() => setFailed(true)}
+            />
+          ) : (
+            <div className="banner-photo-placeholder" aria-hidden="true">
+              <span>n.</span>
+              <small>Collection photo coming soon</small>
+            </div>
+          )}
           <div className="banner-caption">
             {label && <p className="label">{label}</p>}
             <h2>{title}</h2>
@@ -165,7 +180,9 @@ export function Catalog() {
           ? b.price - a.price
           : sort === "sold"
             ? b.soldCount - a.soldCount
-            : a.id - b.id,
+            : sort === "new"
+              ? b.id - a.id
+              : a.id - b.id,
     );
   const queryString = new URLSearchParams(params);
   queryString.delete("category");
@@ -222,6 +239,7 @@ export function Catalog() {
             <option value="price-asc">Price: low to high</option>
             <option value="price-desc">Price: high to low</option>
             <option value="sold">Best sellers</option>
+            <option value="new">New arrivals</option>
           </select>
         </div>
       </div>

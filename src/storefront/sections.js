@@ -20,6 +20,7 @@ const homeSections = [
     to: "/kategori/sweater",
     image: banners.sweater?.src || null,
     imageAlt: banners.sweater?.alt || "NFT Sweater collection",
+    imagePosition: banners.sweater?.position || "center",
     variant: "sweater",
   },
   {
@@ -38,6 +39,7 @@ const homeSections = [
     to: "/kategori/cardigan",
     image: banners.cardigan?.src || null,
     imageAlt: banners.cardigan?.alt || "Nigoo cardigan collection",
+    imagePosition: banners.cardigan?.position || "center",
     variant: "cardigan",
     label: "CARDIGAN COLLECTION",
   },
